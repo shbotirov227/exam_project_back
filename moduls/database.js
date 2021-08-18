@@ -5,19 +5,24 @@ const path = require('path')
 
 module.exports = class Database{
     constructor(){
+        // kurslar uchun
         this.kpath = path.join(__dirname, '..', '/routs', '/kurs.json')
         this.kdata = []
         this.readkfile()
 
+        // uquvchilar uchun
         this.upath = path.join(__dirname, '..', '/routs', '/student.json')
         this.udata = []
         this.readufile()
 
+        // manbalar uchun
         this.mpath = path.join(__dirname, '..', '/routs', '/manba.json')
         this.mdata = []
         this.readmfile()
-    }
         
+
+    }
+        // kurs class
     async readkfile(){
         let kdata = await fs.readFile(this.kpath, 'utf-8')
         kdata = await JSON.parse(kdata)
@@ -40,8 +45,9 @@ module.exports = class Database{
     async readufile(){
         let udata = await fs.readFile(this.upath, 'utf-8')
         udata = await JSON.parse(udata)
-        this.udata = udata.udata;
-        return udata.udata
+         this.udata = udata.udata
+            // console.log(this.upath);
+          return udata.udata
          
      }
      async adduData(name, age, kurs, manba){

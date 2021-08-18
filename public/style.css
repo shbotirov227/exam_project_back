@@ -1,0 +1,181 @@
+body {
+  background-color: #1a1d3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.section .navbar form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section .navbar form input {
+  margin: 10px;
+  margin-left: 0;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.section .navbar form .add__popul__age {
+  margin: 10px;
+}
+
+.section .navbar form select {
+  margin: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.section .navbar form button {
+  margin: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.section .manager__list__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.section .manager__list__body .lists {
+  position: relative;
+}
+
+.section .manager__list__body .lists .back {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.561);
+}
+
+.section .manager__list__body .item__element_active {
+  position: relative;
+}
+
+.section .manager__list__body .item__element_active th {
+  font-size: 25px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.section .manager__list__body .item__element_active td {
+  font-size: 20px;
+  padding: 7px 15px;
+}
+
+.section .manager__list__body .item__element_active table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.section .manager__list__body .item__element_active td button {
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: red;
+  border: none;
+}
+
+.section .manager__list__body .item__element_active tbody td, .section .manager__list__body .item__element_active button {
+  color: #fff;
+}
+
+.section .item__element__kurs {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 20;
+  width: 50%;
+  background-color: rgba(255, 218, 7, 0.5);
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  -webkit-transform: translate(50%, 100%);
+          transform: translate(50%, 100%);
+}
+
+.section .item__element__kurs button {
+  border: none;
+  background-color: #1eff00;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.section .item__element__kurs input {
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.section .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section .modal-body button {
+  border: none;
+  background-color: #4e534e;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.section .modal-body input {
+  border: 1px solid black;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.section section .contain .manager__list__body .right ul .clickled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,74 +1,79 @@
-const express = require('express');
-const fs = require('fs/promises');
-const database = require('./moduls/database');
+const express = require('express')
+const fs = require('fs').promises
+const kursdatabase = require('./moduls/database')
 
 
 
-const db = new database();
+const db = new kursdatabase()
+// console.log(udb.addData('javohir', 'abdujalilov', 21, 'buxoro', 'web developer', 'instagram'));
 
-const app = express();
 
-app.listen(8080, () => {
-    console.log('app running port');
-})
-app.use(express.urlencoded({
-    extended: true,
-}))
+
+ const app = express();
+
+ app.listen(8088, ()=>{
+     console.log('app running port');
+ })
+ app.use(express.urlencoded({
+     extended: true,
+ }))
 app.use(express.json())
 
-app.use(express.static(__dirname + '/public'))
+ app.use(express.static(__dirname+'/public'))
 
-app.get('/', async (req, res) => {
-    let reed = await fs.readFile(__dirname + '/views/index.html', "utf-8")
+ app.get('/', async (req, res)=>{
+    let reed = await fs.readFile(__dirname+'/views/index.html', "utf-8")
     res.send(reed)
-})
-app.get("/manager", async (req, res) => {
-    let studentdata = await db.readufile();
-    res.json({
-        studentdata: studentdata
-    })
-})
+ })
+ app.get("/manager", async (req, res)=>{
+     let udata = await db.readufile();
+     res.json({
+         udata: udata
+     })
+ })
 
-app.post("/studentform", async (req, res) => {
+ app.post("/uform", async (req, res)=>{
+   
+     let dbbody = await db.adduData(req.body.name, req.body.age, req.body.kurs, req.body.manba)
+     res.json(dbbody)
+  
+ })
 
-    let dbbody = await db.addStudentData(req.body.name, req.body.age, req.body.kurs, req.body.manba)
-    res.json(dbbody)
-
-})
 
 
-
-// kurslar
-app.get("/kurslar", async (req, res) => {
+// kurslar bolimi
+ app.get("/kurslar", async (req, res)=>{
     let kdata = await db.readkfile();
     res.json({
         kdata: kdata
     })
 })
-app.post("/kursform", async (req, res) => {
-
-    let dbkbody = await db.addKursData(req.body.name)
+app.post("/kform", async (req, res)=>{
+   
+    let dbkbody = await db.addkData(req.body.name)
     res.json(dbkbody)
 
 })
 
 
-// manbalar 
-app.get("/manbalar", async (req, res) => {
+// manba bolimi
+app.get("/manbalar", async (req, res)=>{
     let mdata = await db.readmfile();
     res.json({
         mdata: mdata
     })
 })
-app.post("/manbaform", async (req, res) => {
-    let dbmbody = await db.addManbaData(req.body.name)
+app.post("/mform", async (req, res)=>{
+   
+    let dbmbody = await db.addmData(req.body.name)
     res.json(dbmbody)
+
 })
+ 
 
-
-app.delete("/delete/:id", async (req, res) => {
+app.delete("/delete/:id", async (req, res)=>{
     await db.delete(req.params.id)
     res.json({
         ok: true,
     })
-})
+});
